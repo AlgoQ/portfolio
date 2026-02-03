@@ -38,7 +38,7 @@ export function ContactSection() {
         <div className="lg:col-span-8 space-y-12">
           <div className="space-y-4">
             <p className="text-2xl lg:text-3xl font-light leading-snug max-w-xl text-balance">
-              If you would like to discuss a project or just say hi, I'm always
+              If you would like to discuss a project or just say hi, I am always
               down to chat.
             </p>
           </div>
