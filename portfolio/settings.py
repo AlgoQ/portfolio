@@ -14,8 +14,6 @@ import os
 import secrets
 from pathlib import Path
 
-import dj_database_url
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -117,6 +115,7 @@ if IS_HEROKU_APP:
     # automatically by Heroku when a database addon is attached to your Heroku app. See:
     # https://devcenter.heroku.com/articles/provisioning-heroku-postgres
     # https://github.com/jazzband/dj-database-url
+    import dj_database_url
     DATABASES = {
         "default": dj_database_url.config(
             conn_max_age=600,

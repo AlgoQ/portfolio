@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'swiss-red': '#E63946',
+                        'swiss-red-light': '#FF6B6B',
+                        'surface': '#0A0A0B',
+                        'surface-raised': '#111113',
+                        'surface-hover': '#18181B',
+                        'border-subtle': '#27272A',
+                        'text-primary': '#FAFAFA',
+                        'text-secondary': '#A1A1AA',
+                        'text-tertiary': '#71717A',
+                    },
+                    fontFamily: {
+                        'display': ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+                        'body': ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+                        'mono': ['"IBM Plex Mono"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Kobe Janssens</title>
-    
+
     <!-- Meta Tags -->
     <meta name="description" content="I'm Kobe Janssens, a Full Stack Developer and Quant. I craft custom solutions for clients and have built AI models for startups and open-source projects. Let's connect!" />
 
@@ -23,10 +49,12 @@
     <meta name="twitter:description" content="I'm Kobe Janssens, a developer passionate about building projects and exploring quantitative trading. Reach out for collaboration!" />
     <meta name="twitter:image" content="https://example.com/your-image.jpg" />
 
-
-    <body class="text-slate-50">
-        <div class="background-circle invisible md:visible" id="circle"></div>
-        <div class="relative z-1">
+    <body class="bg-surface text-text-primary font-body antialiased">
+        <!-- Grid overlay -->
+        <div class="grid-overlay" id="gridOverlay"></div>
+        <!-- Mouse spotlight -->
+        <div class="spotlight" id="spotlight"></div>
+        <div class="relative z-10">
             {% block content %}
             {% endblock %}
         </div>
