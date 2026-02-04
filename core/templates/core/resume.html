@@ -1,0 +1,234 @@
+{% extends 'core/_base.html' %}
+
+{% block content %}
+    <div class="max-w-3xl mx-auto px-6 sm:px-10 md:px-16 pt-16 md:pt-24 pb-24">
+
+        <!-- Back link -->
+        <a href="{% url 'index' %}" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-text-tertiary hover:text-swiss-red transition-colors duration-300 mb-12">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"/>
+            </svg>
+            Back
+        </a>
+
+        <!-- Header -->
+        <header class="mb-16">
+            <div class="w-8 h-1 bg-swiss-red mb-8"></div>
+            <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-text-primary leading-[1.05]">
+                Kobe Janssens
+            </h1>
+            <h2 class="font-display text-lg font-light text-text-secondary mt-3 tracking-wide">
+                Full Stack Developer <span class="text-swiss-red">/</span> Quant
+            </h2>
+            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-5 font-mono text-xs text-text-tertiary">
+                <span>kobejanssens@outlook.com</span>
+                <span>Zwalm, Belgium</span>
+                <a href="https://github.com/AlgoQ" target="_blank" class="hover:text-swiss-red transition-colors">github.com/AlgoQ</a>
+                <a href="https://linkedin.com/in/kobe-janssens-46a93613b" target="_blank" class="hover:text-swiss-red transition-colors">LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <section class="mb-14">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-4 h-px bg-swiss-red"></div>
+                <h3 class="font-mono text-xs uppercase tracking-widest text-swiss-red">Summary</h3>
+            </div>
+            <div class="text-text-secondary leading-relaxed text-[15px] space-y-3">
+                <p>I build trading systems and digital platforms. My clients are founders, traders, and companies who need production-ready software &mdash; not proposals. I write the code. I deploy it. I maintain it.</p>
+                <p>I work with people who value execution over process. If you need sophisticated technical infrastructure built and shipped, let's talk.</p>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="mb-14">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-4 h-px bg-swiss-red"></div>
+                <h3 class="font-mono text-xs uppercase tracking-widest text-swiss-red">Experience</h3>
+            </div>
+            <div class="space-y-8">
+
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-6">
+                    <div class="shrink-0 sm:w-32">
+                        <span class="font-mono text-xs text-text-tertiary tracking-wide">2025 — <span class="text-swiss-red">Present</span></span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-display text-base font-medium text-text-primary">Founder · Inkt</h4>
+                        <p class="text-text-secondary text-[15px] leading-relaxed mt-2">Book library platform with audio-text sync and highlighting. Rust/Axum backend, SvelteKit frontend, PostgreSQL. Designed, built, and deployed from scratch.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-6">
+                    <div class="shrink-0 sm:w-32">
+                        <span class="font-mono text-xs text-text-tertiary tracking-wide">2025 — <span class="text-swiss-red">Present</span></span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-display text-base font-medium text-text-primary">Front-End Developer · TradeStream</h4>
+                        <p class="text-text-secondary text-[15px] leading-relaxed mt-2">Led 2024 year-in-review project. Rebuilt the entire front-end codebase, upgrading from Nuxt 2 to Nuxt 3, and launched a new landing page.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-6">
+                    <div class="shrink-0 sm:w-32">
+                        <span class="font-mono text-xs text-text-tertiary tracking-wide">2024</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-display text-base font-medium text-text-primary">Quant Research Developer · Pedma Research</h4>
+                        <p class="text-text-secondary text-[15px] leading-relaxed mt-2">Development for a crypto research newsletter. Quantitative analysis with NumPy, Pandas, and Matplotlib.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-6">
+                    <div class="shrink-0 sm:w-32">
+                        <span class="font-mono text-xs text-text-tertiary tracking-wide">2022 — 2023</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-display text-base font-medium text-text-primary">Python Developer · CCXT</h4>
+                        <p class="text-text-secondary text-[15px] leading-relaxed mt-2">The biggest software project used by traders to connect and trade with cryptocurrency exchanges worldwide. Integrated, tested, and debugged API endpoints for various exchanges using JavaScript/TypeScript.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-1 sm:gap-6">
+                    <div class="shrink-0 sm:w-32">
+                        <span class="font-mono text-xs text-text-tertiary tracking-wide">2021 — 2022</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-display text-base font-medium text-text-primary">Quantitative Developer · Elysian Fund</h4>
+                        <p class="text-text-secondary text-[15px] leading-relaxed mt-2">Pioneered an AI system forecasting short-term Bitcoin/Ethereum price movements. Quantitative research in Python, production code in Node.js.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-14">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-4 h-px bg-swiss-red"></div>
+                <h3 class="font-mono text-xs uppercase tracking-widest text-swiss-red">Skills</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                {% for skill in skills %}
+                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-sm bg-surface-raised text-text-tertiary border border-border-subtle">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="mb-14">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-4 h-px bg-swiss-red"></div>
+                <h3 class="font-mono text-xs uppercase tracking-widest text-swiss-red">Projects</h3>
+            </div>
+            <div class="space-y-6">
+
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h4 class="font-display text-base font-medium text-text-primary">Trabro</h4>
+                        <a href="https://github.com/AlgoQ" target="_blank" class="text-text-tertiary hover:text-swiss-red transition-colors">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-text-secondary text-[15px] leading-relaxed mt-2">High-frequency market maker framework for crypto DEXs. Event-driven Rust with ZeroMQ, QuestDB, and multi-exchange connectors.</p>
+                </div>
+
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h4 class="font-display text-base font-medium text-text-primary">Inkt</h4>
+                        <a href="https://inkt.app" target="_blank" class="text-text-tertiary hover:text-swiss-red transition-colors">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-text-secondary text-[15px] leading-relaxed mt-2">Book library platform with audio-text sync and highlighting. Rust/Axum backend, SvelteKit frontend. Designed, built, and deployed from scratch.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="mb-14">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-4 h-px bg-swiss-red"></div>
+                <h3 class="font-mono text-xs uppercase tracking-widest text-swiss-red">Languages</h3>
+            </div>
+            <div class="flex gap-10">
+                <div>
+                    <h4 class="font-display text-base font-medium text-text-primary">Dutch</h4>
+                    <p class="font-mono text-xs text-text-tertiary mt-1">Native</p>
+                </div>
+                <div>
+                    <h4 class="font-display text-base font-medium text-text-primary">English</h4>
+                    <p class="font-mono text-xs text-text-tertiary mt-1">Professional</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests -->
+        <section class="mb-14">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-4 h-px bg-swiss-red"></div>
+                <h3 class="font-mono text-xs uppercase tracking-widest text-swiss-red">Interests</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                {% for interest in interests %}
+                    <span class="font-mono text-[11px] px-2.5 py-1 rounded-sm bg-surface-raised text-text-tertiary border border-border-subtle">{{ interest }}</span>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-border-subtle pt-6">
+            <p class="font-mono text-xs text-text-tertiary">
+                &copy; {{ year }} Kobe Janssens
+            </p>
+        </footer>
+    </div>
+
+    <!-- Print styles -->
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                color: #111 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .grid-overlay, .spotlight {
+                display: none !important;
+            }
+            a[href] {
+                color: inherit !important;
+                text-decoration: none !important;
+            }
+            /* Hide back link when printing */
+            a[href="/"]:first-of-type {
+                display: none !important;
+            }
+            .bg-surface-raised {
+                background: #f3f4f6 !important;
+            }
+            .text-text-primary, h1, h2, h4 {
+                color: #111 !important;
+            }
+            .text-text-secondary, p {
+                color: #333 !important;
+            }
+            .text-text-tertiary, span {
+                color: #666 !important;
+            }
+            .text-swiss-red, .bg-swiss-red {
+                color: #E63946 !important;
+            }
+            .border-border-subtle {
+                border-color: #d1d5db !important;
+            }
+            .border-t {
+                border-color: #d1d5db !important;
+            }
+        }
+    </style>
+{% endblock %}

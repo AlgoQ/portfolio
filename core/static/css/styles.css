@@ -1,62 +1,328 @@
+/* ═══════════════════════════════════════════════════════════
+   SWISS DESIGN SYSTEM — Precision Grid Portfolio
+   Inspired by International Typographic Style
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Base ─────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: rgba(230, 57, 70, 0.3);
+    color: #FAFAFA;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    overflow: hidden;
-    background-color: rgba(15, 23, 42, 1);
-    color: rgb(248 250 252); 
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #0A0A0B;
+    color: #FAFAFA;
 }
 
-#circle {
-    position: absolute;
-    transform: translate(-50%,-50%);
-    height: 1000px;
-    width: 1000px;
+/* ── Grid Overlay ─────────────────────────────────────── */
+/* Subtle background grid — references Müller-Brockmann */
+
+.grid-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    background-image:
+        linear-gradient(rgba(230, 57, 70, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230, 57, 70, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.grid-overlay.visible {
+    opacity: 1;
+}
+
+/* ── Mouse Spotlight ──────────────────────────────────── */
+
+.spotlight {
+    position: fixed;
+    pointer-events: none;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(27, 41, 74, 1) 0%, rgba(15, 23, 42, 0) 50%);
-    z-index: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(230, 57, 70, 0.04) 0%,
+        rgba(230, 57, 70, 0.02) 25%,
+        transparent 60%
+    );
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.6s ease;
 }
 
-.job-link {
-    color: rgb(248, 250, 252);
+.spotlight.active {
+    opacity: 1;
 }
 
-.job-link:hover {
-    color: rgba(110, 255, 250, 0.6);
-    transition: color 0.25s ease;
+/* ── Inline Links ─────────────────────────────────────── */
+
+.inline-link {
+    color: #FAFAFA;
+    text-decoration: none;
+    background-image: linear-gradient(#E63946, #E63946);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                color 0.3s ease;
 }
 
-.resume-button {
-    color: rgba(15, 23, 42, 1);
+.inline-link:hover {
+    color: #E63946;
+    background-size: 100% 1px;
 }
 
-.resume-button:hover {
-    color: rgb(248, 250, 252);
+/* ── Social Icons ─────────────────────────────────────── */
+
+.social-icon {
+    position: relative;
 }
 
-.job-title {
-    transition: color 0.5s ease;
+.social-icon::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: #E63946;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
 }
 
-.job-section:hover .job-title {
-    color: rgba(110, 255, 250, 0.6);
+.social-icon:hover::after {
+    width: 100%;
 }
 
-.job-section:hover {
-    background-color: rgba(15, 23, 42, 0.9);
-    border-radius: 5px;
+/* ── Accent Bar Animation ─────────────────────────────── */
+
+.accent-bar {
+    animation: accentGrow 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    transform-origin: left;
 }
 
-.project-inner {
-    background-color: rgba(17, 34, 64, 0.5);
+@keyframes accentGrow {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
 }
 
-.project-inner:hover {
-    background-color: rgba(17, 34, 64, 1);
+/* ── Fade In Animation ────────────────────────────────── */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-.project-title {
-    transition: color 0.5s ease;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.project-inner:hover .project-title {
-    color: rgba(110, 255, 250, 0.6);
+/* ── Scroll Reveal ────────────────────────────────────── */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Navigation ───────────────────────────────────────── */
+
+.nav-link.active .nav-line {
+    width: 3rem;
+    background-color: #FAFAFA;
+}
+
+.nav-link.active span:last-child {
+    color: #FAFAFA;
+}
+
+/* ── Job Cards ────────────────────────────────────────── */
+
+.job-card {
+    position: relative;
+}
+
+.job-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 1px;
+    background: #E63946;
+    transform: translateY(-50%);
+    transition: width 0.3s ease;
+    opacity: 0;
+}
+
+/* ── Project Cards ────────────────────────────────────── */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: #E63946;
+    transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover::before {
+    height: 100%;
+}
+
+/* ── Tags ─────────────────────────────────────────────── */
+
+.tag {
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.job-card:hover .tag,
+.project-card:hover .tag {
+    border-color: rgba(230, 57, 70, 0.2);
+    color: #A1A1AA;
+}
+
+/* ── Scrollbar ────────────────────────────────────────── */
+
+.main-panel::-webkit-scrollbar {
+    width: 3px;
+}
+
+.main-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main-panel::-webkit-scrollbar-thumb {
+    background: #27272A;
+    border-radius: 2px;
+}
+
+.main-panel::-webkit-scrollbar-thumb:hover {
+    background: #E63946;
+}
+
+/* ── Contact Modal ────────────────────────────────────── */
+
+.contact-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.contact-overlay.hidden {
+    display: none;
+}
+
+.contact-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    animation: fadeInBackdrop 0.2s ease forwards;
+}
+
+.contact-modal {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    background: #141415;
+    border: 1px solid #27272A;
+    padding: 2rem;
+    border-radius: 2px;
+    animation: modalSlideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInBackdrop {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-overlay.closing .contact-backdrop {
+    animation: fadeOutBackdrop 0.2s ease forwards;
+}
+
+.contact-overlay.closing .contact-modal {
+    animation: modalSlideDown 0.2s ease forwards;
+}
+
+@keyframes fadeOutBackdrop {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes modalSlideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .spotlight {
+        display: none;
+    }
+
+    .grid-overlay {
+        display: none;
+    }
 }
