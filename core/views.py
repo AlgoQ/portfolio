@@ -23,7 +23,7 @@ def resume(request):
         'Python', 'JS, TS & Node.js', 'Django', 'FastAPI',
         'Rust', 'SQL', 'NoSQL', 'React', 'Next.js', 'Git',
         'Linux', 'Docker', 'PostgreSQL', 'Redis', 'Flask',
-        'WebSockets', 'REST', 'HTML & CSS',
+        'WebSockets', 'REST', 'HTML & CSS', 'Vue', 'AWS',
     ]
     interests = [
         'Reading', 'Entrepreneurship', 'Travel',
