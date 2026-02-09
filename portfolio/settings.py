@@ -51,7 +51,7 @@ if not IS_HEROKU_APP:
 # if IS_HEROKU_APP:
     # ALLOWED_HOSTS = ["*"]
 # else:
-ALLOWED_HOSTS = ['algoq.pythonanywhere.com']
+ALLOWED_HOSTS = ['algoq.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
